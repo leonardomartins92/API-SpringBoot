@@ -1,0 +1,1794 @@
+{
+	"info": {
+		"_postman_id": "ba7c5eef-6674-4704-939f-4c6b2e50528b",
+		"name": "LP3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cria Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"leo@login\",\r\n    \"senha\": \"123\",\r\n    \"admin\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Usuário Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"leo@login\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/usuarios/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"usuarios",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW9AbG9naW4iLCJleHAiOjE2Mjg2MTk4OTN9.eKtg8MAs1lNCGnj5eJYxtlqYcgSjjG1NLRlNMlpv_WkRW0D4UBaRLEASzvYYHd-TR4P6kOQURLL-zy2tZ8Fk5w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Empresas",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Funcionarios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/funcionarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"funcionarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Passagens",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/passagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"passagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Destinos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destinos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Pacotes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": \"101872139\",\r\n    \"name\": \"Leo\",\r\n    \"email\": \"leo@email\",\r\n    \"phone\": \"99123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user@login",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Empresa",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Funcionario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/funcionarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"funcionarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Pacote",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Destino",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destinos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destinos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Passagem",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/passagens/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"passagens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Cliente/Pacotes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/1/pacotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"1",
+						"pacotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Empresa/Destinos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas/1/destinos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas",
+						"1",
+						"destinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Empresa/Passagens",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas/1/passagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas",
+						"1",
+						"passagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Funcionario/Pacotes",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/funcionarios/1/pacotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"funcionarios",
+						"1",
+						"pacotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Pacote/Destinos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes/1/destinos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes",
+						"1",
+						"destinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisa Pacote/Passagens",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes/1/passagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes",
+						"1",
+						"passagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Destino",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataInicial\": \"2024-01-01\",\r\n    \"dataFinal\": \"2025-01-01\",\r\n    \"idPacote\": 1,\r\n    \"idEmpresa\": \"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destinos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Moana\",\r\n    \"cpf\": \"27390527668\",\r\n    \"telefone\": \"3213\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "27390527668",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "LEO",
+							"disabled": true
+						},
+						{
+							"key": "telefone",
+							"value": "322123",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "LEO@GMAIL",
+							"disabled": true
+						},
+						{
+							"key": "enderecoLogradouro",
+							"value": "RUA ABC",
+							"disabled": true
+						},
+						{
+							"key": "enderecoNumero",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "enderecoComplemento",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "enderecoUf",
+							"value": "MG",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCidade",
+							"value": "JUIZ DE FORA",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCep",
+							"value": "36090-000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Empresa",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cnpj\": \"47741938000126\",\r\n    \"nome\": \"AZUL\",\r\n    \"telefone\": \"(61) 98436-6024\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\",\r\n    \"tipoEmpresa\": \"TRANSPORTE\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Funcionário",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Leo\",\r\n    \"cpf\": \"253.767.004-37\",\r\n    \"telefone\": \"(61) 98436-6024\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\",\r\n    \"tipoFuncionario\": \"GERENTE\",\r\n    \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/funcionarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"funcionarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Pacote",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\": 1,\r\n    \"idFuncionario\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Passagem",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origem\": \"Juiz de Fora\",\r\n    \"destino\": \"Ibitipoca\",\r\n    \"dataIda\": \"2021-02-01\",\r\n    \"dataVolta\": \"2021-03-02\",\r\n    \"idPacote\": 1,\r\n    \"idEmpresa\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/passagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"passagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Destino",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataInicial\": \"2021-01-01\",\r\n    \"dataFinal\": \"2025-01-01\",\r\n    \"idPacote\": 1,\r\n    \"idEmpresa\": 1\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destinos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destinos",
+						"1"
+					],
+					"query": [
+						{
+							"key": "dataInicial",
+							"value": "2022-01-09",
+							"disabled": true
+						},
+						{
+							"key": "dataFinal",
+							"value": "2022-01-11",
+							"disabled": true
+						},
+						{
+							"key": "idPacote",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "idEmpresa",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"ANTONIO\",\r\n    \"cpf\": \"27390527668\",\r\n    \"telefone\": \"3213\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"1"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "27390527668",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "PELE",
+							"disabled": true
+						},
+						{
+							"key": "telefone",
+							"value": "322123",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "LEO@GMAIL",
+							"disabled": true
+						},
+						{
+							"key": "enderecoLogradouro",
+							"value": "RUA ABC",
+							"disabled": true
+						},
+						{
+							"key": "enderecoNumero",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "enderecoComplemento",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "enderecoUf",
+							"value": "MG",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCidade",
+							"value": "JUIZ DE FORA",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCep",
+							"value": "36090-000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Empresa",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cnpj\": \"47741938000126\",\r\n    \"nome\": \"AMARELA\",\r\n    \"telefone\": \"(61) 98436-6024\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\",\r\n    \"tipoEmpresa\": \"TRANSPORTE\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas",
+						"1"
+					],
+					"query": [
+						{
+							"key": "cnpj",
+							"value": "47741938000126",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "Amarela",
+							"disabled": true
+						},
+						{
+							"key": "telefone",
+							"value": "988722915",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "azul@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "tipoEmpresa",
+							"value": "TRANSPORTE",
+							"disabled": true
+						},
+						{
+							"key": "enderecoLogradouro",
+							"value": "Rua Bernardo Mascarenhas",
+							"disabled": true
+						},
+						{
+							"key": "enderecoNumero",
+							"value": "42",
+							"disabled": true
+						},
+						{
+							"key": "enderecoComplemento",
+							"value": "Fundos",
+							"disabled": true
+						},
+						{
+							"key": "enderecoUf",
+							"value": "MG",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCidade",
+							"value": "Juiz de Fora",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCep",
+							"value": "36080001",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Funcionario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"MARIA\",\r\n    \"cpf\": \"253.767.004-37\",\r\n    \"telefone\": \"(61) 98436-6024\",\r\n    \"email\": \"abc@hot.com\",\r\n    \"enderecoLogradouro\": \"Rua ABC\",\r\n    \"enderecoNumero\": \"10\",\r\n    \"enderecoUf\": \"MG\",\r\n    \"enderecoCidade\": \"Jf\",\r\n    \"enderecoCep\": \"36090-000\",\r\n    \"tipoFuncionario\": \"GERENTE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"1"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "253.767.004-37",
+							"disabled": true
+						},
+						{
+							"key": "nome",
+							"value": "Luiza",
+							"disabled": true
+						},
+						{
+							"key": "telefone",
+							"value": "(61) 98436-6024",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "lorenafatimagalvao-94@infolink.com.br",
+							"disabled": true
+						},
+						{
+							"key": "tipoFuncionario",
+							"value": "GERENTE",
+							"disabled": true
+						},
+						{
+							"key": "enderecoLogradouro",
+							"value": "Quadra QS 118 Conjunto 6",
+							"disabled": true
+						},
+						{
+							"key": "enderecoNumero",
+							"value": "579",
+							"disabled": true
+						},
+						{
+							"key": "enderecoComplemento",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "enderecoUf",
+							"value": "DF",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCidade",
+							"value": "Brasília",
+							"disabled": true
+						},
+						{
+							"key": "enderecoCep",
+							"value": "Samambaia Sul (Samambaia)",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Pacote",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\": 2,\r\n    \"idFuncionario\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes",
+						"1"
+					],
+					"query": [
+						{
+							"key": "idCliente",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "nomeCliente",
+							"value": "Mario",
+							"disabled": true
+						},
+						{
+							"key": "idFuncionario",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "nomeFuncionario",
+							"value": "José",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Passagem",
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origem\": \"Muriae\",\r\n    \"destino\": \"Ibitipoca\",\r\n    \"dataIda\": \"2021-02-01\",\r\n    \"dataVolta\": \"2021-03-02\",\r\n    \"idPacote\": 1,\r\n    \"idEmpresa\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/passagens/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"passagens",
+						"1"
+					],
+					"query": [
+						{
+							"key": "origem",
+							"value": "Rio de janeiro",
+							"disabled": true
+						},
+						{
+							"key": "destino",
+							"value": "Ibitipoca",
+							"disabled": true
+						},
+						{
+							"key": "dataIda",
+							"value": "2020-01-01",
+							"disabled": true
+						},
+						{
+							"key": "dataVolta",
+							"value": "2021-01-01",
+							"disabled": true
+						},
+						{
+							"key": "idPacote",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "idEmpresa",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clientes/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clientes",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Destino",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destinos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destinos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Funcionario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/funcionarios/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"funcionarios",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Pacote",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pacotes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pacotes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Passagem",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/passagens/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"passagens",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Empresa",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "leo@login",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/empresas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"empresas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
