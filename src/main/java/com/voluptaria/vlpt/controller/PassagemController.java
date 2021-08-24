@@ -37,7 +37,7 @@ public class PassagemController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable Long id){
         Optional<Passagem> passagem = service.getPassagemById(id);
-        if(passagem.isEmpty()){
+        if(!passagem.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Passagem não encontrada");
         }
         return ResponseEntity.ok(PassagemDTO.createDTO(passagem.get()));
@@ -55,7 +55,7 @@ public class PassagemController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody PassagemDTO passagemDTO){
-        if(service.getPassagemById(id).isEmpty()){
+        if(!service.getPassagemById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Passagem não Encontrado");
         }
         try {
@@ -71,7 +71,7 @@ public class PassagemController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Passagem> passagem = service.getPassagemById(id);
-        if(passagem.isEmpty()){
+        if(!passagem.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Passagem não encontrado");
         }
         service.delete(passagem.get());
@@ -83,7 +83,7 @@ public class PassagemController {
         Passagem passagem = modelMapper.map(passagemDTO, Passagem.class);
         if(passagemDTO.getIdPacote() != null){
             Optional<Pacote> pacote = pacoteService.getPacoteById(passagemDTO.getIdPacote());
-            if(pacote.isEmpty()){
+            if(!pacote.isPresent()){
                 passagem.setPacote(null);
             }else {
                 passagem.setPacote(pacote.get());
@@ -91,7 +91,7 @@ public class PassagemController {
         }
         if(passagemDTO.getIdEmpresa() != null){
             Optional<Empresa> empresa = empresaService.getEmpresaById(passagemDTO.getIdEmpresa());
-            if(empresa.isEmpty()){
+            if(!empresa.isPresent()){
                 passagem.setEmpresa(null);
             }else {
                 passagem.setEmpresa(empresa.get());

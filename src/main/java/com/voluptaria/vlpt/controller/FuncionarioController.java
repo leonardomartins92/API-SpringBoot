@@ -32,7 +32,7 @@ public class FuncionarioController {
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable Long id){
         Optional<Funcionario> funcionario = service.getFuncionarioById(id);
-        if(funcionario.isEmpty()){
+        if(!funcionario.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Funcionário não encontrado");
         }
        return ResponseEntity.ok(FuncionarioDTO.createDTO(funcionario.get()));
@@ -41,7 +41,7 @@ public class FuncionarioController {
     @GetMapping("/{id}/pacotes")
     public ResponseEntity getPacotes(@PathVariable Long id){
         Optional<Funcionario> funcionario = service.getFuncionarioById(id);
-        if(funcionario.isEmpty()){
+        if(!funcionario.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Funcionário não encontrado");
         }
         return ResponseEntity.ok(funcionario.get().getPacotes()
@@ -61,7 +61,7 @@ public class FuncionarioController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody FuncionarioDTO funcionarioDTO){
-        if(service.getFuncionarioById(id).isEmpty()){
+        if(!service.getFuncionarioById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Funcionario não Encontrado");
         }
         try {
@@ -77,7 +77,7 @@ public class FuncionarioController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Funcionario> funcionario = service.getFuncionarioById(id);
-        if(funcionario.isEmpty()){
+        if(!funcionario.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Funcionario não encontrado");
         }
         service.delete(funcionario.get());

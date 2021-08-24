@@ -34,7 +34,7 @@ public class ClienteController {
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable Long id){
         Optional<Cliente> cliente =  service.getClienteById(id);
-        if(cliente.isEmpty()){
+        if(!cliente.isPresent()){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cliente não encontrado");
         }
         return ResponseEntity.ok(ClienteDTO.createDTO(cliente.get()));
@@ -43,7 +43,7 @@ public class ClienteController {
     @GetMapping("/{id}/pacotes")
     public ResponseEntity getPacotes(@PathVariable Long id){
         Optional<Cliente> cliente = service.getClienteById(id);
-        if(cliente.isEmpty()){
+        if(!cliente.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cliente não encontrado");
         }
         return ResponseEntity.ok(cliente.get().getPacotes()
@@ -64,7 +64,7 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody ClienteDTO clienteDTO){
-        if(service.getClienteById(id).isEmpty()){
+        if(!service.getClienteById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não Encontrado");
         }
         try {
@@ -80,7 +80,7 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Cliente> cliente = service.getClienteById(id);
-        if(cliente.isEmpty()){
+        if(!cliente.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Cliente não encontrado");
         }
         service.delete(cliente.get());

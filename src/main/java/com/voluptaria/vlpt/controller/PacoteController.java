@@ -39,7 +39,7 @@ public class PacoteController {
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable Long id){
         Optional<Pacote> pacote = service.getPacoteById(id);
-        if(pacote.isEmpty()){
+        if(!pacote.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Pacote não encontrado");
         }
        return ResponseEntity.ok(PacoteDTO.createDTO(pacote.get()));
@@ -48,7 +48,7 @@ public class PacoteController {
     @GetMapping("/{id}/pacotes")
     public ResponseEntity getDestinos(@PathVariable Long id){
         Optional<Pacote> pacote = service.getPacoteById(id);
-        if(pacote.isEmpty()){
+        if(!pacote.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Pacote não encontrado");
         }
         return ResponseEntity.ok(pacote.get().getDestinos()
@@ -58,7 +58,7 @@ public class PacoteController {
     @GetMapping("/{id}/passagens")
     public ResponseEntity getPassagens(@PathVariable Long id){
         Optional<Pacote> pacote = service.getPacoteById(id);
-        if(pacote.isEmpty()){
+        if(!pacote.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Pacote não encontrado");
         }
         return ResponseEntity.ok(pacote.get().getPassagens()
@@ -78,7 +78,7 @@ public class PacoteController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody PacoteDTO pacoteDTO){
-        if(service.getPacoteById(id).isEmpty()){
+        if(!service.getPacoteById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pacote não Encontrado");
         }
         try {
@@ -94,7 +94,7 @@ public class PacoteController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Pacote> pacote = service.getPacoteById(id);
-        if(pacote.isEmpty()){
+        if(!pacote.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Pacote não encontrado");
         }
         service.delete(pacote.get());
@@ -107,7 +107,7 @@ public class PacoteController {
 
         if(pacoteDTO.getIdFuncionario() != null){
             Optional<Funcionario> funcionario = funcionarioService.getFuncionarioById(pacoteDTO.getIdFuncionario());
-            if(funcionario.isEmpty()){
+            if(!funcionario.isPresent()){
                 pacote.setFuncionario(null);
             }else {
                 pacote.setFuncionario(funcionario.get());
@@ -115,7 +115,7 @@ public class PacoteController {
         }
         if(pacoteDTO.getIdCliente() != null){
             Optional<Cliente> cliente = clienteService.getClienteById(pacoteDTO.getIdCliente());
-            if(cliente.isEmpty()){
+            if(!cliente.isPresent()){
                 pacote.setCliente(null);
             }else {
                 pacote.setCliente(cliente.get());

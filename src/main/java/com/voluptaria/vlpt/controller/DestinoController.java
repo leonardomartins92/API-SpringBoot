@@ -37,7 +37,7 @@ public class DestinoController {
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable Long id){
         Optional<Destino> destino = service.getDestinoById(id);
-        if(destino.isEmpty()){
+        if(!destino.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Destino não encontrado");
         }
        return ResponseEntity.ok(DestinoDTO.createDTO(destino.get()));
@@ -56,7 +56,7 @@ public class DestinoController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody DestinoDTO destinoDTO){
-        if(service.getDestinoById(id).isEmpty()){
+        if(!service.getDestinoById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Destino não Encontrado");
         }
         try {
@@ -72,7 +72,7 @@ public class DestinoController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Destino> destino = service.getDestinoById(id);
-        if(destino.isEmpty()){
+        if(!destino.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Destino não encontrado");
         }
         service.delete(destino.get());
@@ -84,7 +84,7 @@ public class DestinoController {
         Destino destino = modelMapper.map(destinoDTO, Destino.class);
         if(destinoDTO.getIdEmpresa() != null){
             Optional<Empresa> empresa = empresaService.getEmpresaById(destinoDTO.getIdEmpresa());
-            if(empresa.isEmpty()){
+            if(!empresa.isPresent()){
                 destino.setEmpresa(null);
             }else {
                 destino.setEmpresa(empresa.get());
@@ -92,7 +92,7 @@ public class DestinoController {
         }
         if(destinoDTO.getIdPacote() != null){
             Optional<Pacote> pacote = pacoteService.getPacoteById(destinoDTO.getIdPacote());
-            if(pacote.isEmpty()){
+            if(!pacote.isPresent()){
                 destino.setPacote(null);
             }else {
                 destino.setPacote(pacote.get());

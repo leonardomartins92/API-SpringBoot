@@ -33,7 +33,7 @@ public class EmpresaController {
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable Long id){
         Optional<Empresa> empresa = service.getEmpresaById(id);
-        if(empresa.isEmpty()){
+        if(!empresa.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Empresa não encontrada");
         }
         return ResponseEntity.ok(EmpresaDTO.createDTO(empresa.get()));
@@ -42,7 +42,7 @@ public class EmpresaController {
     @GetMapping("/{id}/destinos")
     public ResponseEntity getDestinos(@PathVariable Long id){
         Optional<Empresa> empresa = service.getEmpresaById(id);
-        if(empresa.isEmpty()){
+        if(!empresa.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Empresa não encontrada");
         }
         return ResponseEntity.ok(empresa.get().getDestinos()
@@ -52,7 +52,7 @@ public class EmpresaController {
     @GetMapping("/{id}/passagens")
     public ResponseEntity getPassagens(@PathVariable Long id){
         Optional<Empresa> empresa = service.getEmpresaById(id);
-        if(empresa.isEmpty()){
+        if(!empresa.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Empresa não encontrada");
         }
         return ResponseEntity.ok(empresa.get().getPassagens()
@@ -72,7 +72,7 @@ public class EmpresaController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable Long id,@RequestBody EmpresaDTO empresaDTO){
-        if(service.getEmpresaById(id).isEmpty()){
+        if(!service.getEmpresaById(id).isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Empresa não Encontrado");
         }
         try {
@@ -88,7 +88,7 @@ public class EmpresaController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Long id){
         Optional<Empresa> empresa = service.getEmpresaById(id);
-        if(empresa.isEmpty()){
+        if(!empresa.isPresent()){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Empresa não encontrado");
         }
         service.delete(empresa.get());
